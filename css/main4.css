@@ -7,12 +7,14 @@ main {
 
     grid-template-columns:
             [sidebar-start] 1fr
-            [contenido-start] 2fr;
+            [sidebar-end contenido-start] 2fr;
+            [contenido-end];
 
     grid-template-rows:
             [header-start] 1fr
-            [contenido-start] 2fr
-            [footer-start] 1fr;
+            [header-end contenido-start] 2fr
+            [footer-start] 1fr
+            [footer-end];
 }
 
 main > * {
@@ -33,13 +35,13 @@ main > * {
 
 
 header{
-    grid-column: sidebar-start / span 2;
+    grid-column: sidebar-start / contenido-end;
 }
 
 aside {
-    grid-row: contenido-start / span 2;
+    grid-row: header-end / footer-end;
 }
 
 footer {
-    grid-column: contenido-start;
+    grid-column: contenido-start / contenido-end;
 }

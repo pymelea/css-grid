@@ -1,0 +1,56 @@
+main {
+    display: grid;
+    font-family: sans-serif;
+    height: 100vh;
+    grid-gap: 10px;
+
+    /*    Especificar posición de las áreas*/
+    grid-template-areas:
+            "header"
+            "izquierda"
+            "contenido"
+            "derecha"
+            "footer";
+}
+
+main > * {
+    background-color: #033649;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 500px) {
+    main {
+        grid-template-areas:
+                "header header derecha"
+                /*"header header header"*/
+                "izquierda contenido derecha"
+                /*"footer footer .";*/
+                /*"footer footer footer";*/
+                "footer footer derecha";
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 2fr 5fr 1fr;
+    }
+}
+
+/* Nombrar las áreas*/
+header {
+    grid-area: header;
+}
+
+aside:first-of-type {
+    grid-area: izquierda;
+}
+
+article {
+    grid-area: contenido;
+}
+
+aside:last-of-type {
+    grid-area: derecha;
+}
+
+footer {
+    grid-area: footer;
+}

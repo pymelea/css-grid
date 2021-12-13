@@ -1,0 +1,24 @@
+main {
+    display: grid;
+    height: 100vh;
+    grid-gap:10px;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+}
+
+/*main > * {*/
+/*    order: 1;*/
+/*}*/
+
+div{
+    background-color: deeppink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+div:nth-child(4){
+    background-color: #033649;
+    color: white;
+    order: 1;
+}
